@@ -142,6 +142,11 @@ class MediaMonitorService : Service() {
             .build()
     }
 
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        if (!running) startMonitoring()
+        return START_STICKY
+    }
+
     override fun onBind(intent: Intent?) = null
 
     override fun onDestroy() {

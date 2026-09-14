@@ -1,14 +1,14 @@
 # مقتنص المحذوفات - WhatsAppCatcherPro
 
-مشروع Android Kotlin محلي، يستهدف Android 12 و13 و14.
+مشروع Android Kotlin محلي، يستهدف Android 12 و13 و14 وما بعدهما ضمن حدود صلاحيات النظام.
 
 ## بناء APK عبر GitHub Actions
 
-هذه النسخة **لا تعتمد على ملف `gradlew`**. يقوم GitHub Actions بإعداد Gradle 8.7 على خادم البناء ثم ينفذ مهمة:
+المشروع لا يحتاج إلى رفع ملف APK إلى المستودع. عند تشغيل GitHub Actions يقوم سير العمل بتثبيت JDK 17 وGradle 8.7، ثم ينشئ Gradle Wrapper ويستخدمه لبناء التطبيق بالأمر:
 
-`gradle :app:assembleDebug`
+`./gradlew :app:assembleDebug`
 
-بعد نجاح البناء، ستجد APK تحت Artifacts باسم:
+بعد نجاح البناء ستجد ملف APK في **Artifacts** باسم:
 
 `WhatsAppCatcherPro-APK`
 
